@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div th:fragment="navright" class="col-md-3 col-sm-3    nav-right ">
+    <!-- 右侧列表内容 -->
+    <div class="type_content">
+        <div class="type_title">
+            搜索文章
+        </div>
+        <form  th:action="@{/blog}" method="post">
+
+            <div class="input-group typelist">
+                <input type="text" class="form-control" name = "title" placeholder="Search for...">
+                <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Go!</button>
+                  </span>
+            </div><!-- /input-group -->
+        </form>
+        <div class="type_title">
+            分类列表
+        </div>
+        <ul th:each="type:${Type}" class = typelist>
+            <li class="type"><a href="" th:text="${type.name}" th:href="@{'/blog/type/'+${type.name}}" class="type" ></a></li>
+        </ul>
+        <div class="type_title">
+            时间归档
+        </div>
+        <ul th:each="blog:${blogs}" class = typelist>
+            <li class="type"><a href="" th:text="${blog.createTime}" th:href="@{'/blog/date/'+${blog.createTime}}" class="type" ></a></li>
+        </ul>
+
+
+    </div>
+</div>
+<div class="page" th:fragment="page" th:if="${blog.total ne 0}">
+    <nav aria-label="Page navigation" class = "page" >
+        <ul class="pagination pagination-lg justify-content-center">
+            <li th:if="${blog.current} ge 2">
+                <a href="#"  th:href="@{'/blog/'+${blog.current- 1} }"aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li th:if="${blog.current ge 3} "  ><a href="#" th:text="${blog.current-2} " th:href="@{'/blog/'+${blog.current- 2} }">1</a></li>
+            <li th:if="${blog.current ge 2} "  ><a href="#" th:text="${blog.current-1} " th:href="@{'/blog/'+${blog.current- 1} }">2</a></li>
+            <li  class="active"><a href="#"th:text="${blog.current}" th:href="@{'/blog/'+${blog.current}}">3</a></li>
+            <li th:if="${(blog.pages -blog.current) ge 1 }  "  ><a href="#" th:text="${blog.current+1} " th:href="@{'/blog/'+${blog.current+ 1} }">4</a></li>
+            <li th:if="${(blog.pages -blog.current) ge 2 }  "  ><a href="#" th:text="${blog.current+2} " th:href="@{'/blog/'+${blog.current+ 2} }">5</a></li>
+            <li th:if="${(blog.pages - blog.current) ge 1}  ">
+                <a href="#" th:href="@{'/blog/'+${blog.current + 1}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<nav class="navbar navbar-default" th:fragment="navbar-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=" #bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">SimpleLife</a>
+        </div>
+        <div class=" sign-name" >
+            <h5 >--  盔甲战士臂上，鸢尾花的徽章微亮</h5>
+
+
+        </div><!-- /.navbar-collapse -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/blog}" class = "nav">全部博客</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<nav class="navbar navbar-inverse navbar-static-bottom navbar-footer" th:fragment="footer">
+    <div class="container">
+        <h5>© simplelife   •   Powered by simplelife</h5>
+        <h5>ICP 浙ICP备17008806号-3 ♥ Theme Amaze by spiritree & Longyu.Sun</h5>
+    </div>
+
+</nav>
+</body>
+</html>

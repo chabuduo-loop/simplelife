@@ -1,0 +1,16 @@
+input.form-control {
+	width: 150px !important;
+}
+select.form-control {
+	width: 150px !important;
+}
+
+div.detail div.blog-content{
+	margin-top: 50px !important;
+	
+
+}
+
+button.submit {
+	margin-bottom: 50px !important;
+}

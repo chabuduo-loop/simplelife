@@ -1,0 +1,58 @@
+a.blog:hover {
+    text-decoration: none !important;
+}
+a.blog {
+    display: flex;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    align-items:center;
+    justify-content:center;
+    background: #00ff99;
+    border-radius: 25px;
+    border: solid 2px;
+    bottom: 19%;
+    right: 28%;
+}
+
+nav.page {
+    position: absolute !important;
+    bottom: 17% !important;
+    left: 22% !important;
+}
+a.options {
+    margin-right: 15px;
+}
+table.table tr td a:hover {
+    color: black !important;
+}
+
+table.table tr td {
+    text-align: center !important;
+    line-height: 30px !important;
+}
+table.table tr td a {
+    text-align: center;
+    color: grey !important;
+    text-decoration: none !important;
+}
+table.table tr th {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center !important;
+    font-size: 18px !important;
+    color: grey !important;;
+}
+
+
+
+
+
+/* 导航栏和页脚 */
+
+
+@media (max-width: 770px){
+    a.blog {
+        bottom: 13%;
+    }
+}
+

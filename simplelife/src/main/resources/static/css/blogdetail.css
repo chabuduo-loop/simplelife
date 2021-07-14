@@ -1,0 +1,45 @@
+ul.typelist {
+
+    padding:0;
+
+    margin:0;
+
+    text-align: left;
+
+    list-style-type: none;
+
+}
+a.type {
+    font-size: 14px;
+    text-decoration: none;
+    color: #2d3436;
+    font-weight: normal;
+    display: block;
+    width: 100px;
+}
+a.type:hover {
+    font-weight: bolder;
+
+}
+input.form-control {
+
+}
+div.typelist{
+    padding-top: 20px !important;
+}
+li.type{
+    padding-top: 15px !important;
+}
+
+div.type_content {
+    padding-left: 7%;
+    padding-top: 0%;
+}
+
+div.type_title {
+    font-size: 16px;
+    padding-bottom: 5px;
+    border-bottom: #BEBEBE solid 1px;
+    letter-spacing: 2px;
+    padding-top: 30px;
+}

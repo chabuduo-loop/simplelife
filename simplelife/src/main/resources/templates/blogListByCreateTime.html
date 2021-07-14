@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+
+    <script src="../../jquery-3.5.1.min.js" ></script>
+    <link rel="stylesheet" href="../../bootstrap-3.4.1/dist/css/bootstrap.min.css">
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="../../-3.4.1/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/blogList.css">
+    <link rel="stylesheet" href="../../css/blogdetail.css">
+
+</head>
+<body>
+<!-- 顶部导航栏 -->
+
+<div class = "own-nav" >
+    <!-- 导航栏 -->
+
+    <nav class="navbar navbar-default" th:replace="navright :: navbar-top">
+
+    </nav>
+
+
+    <div class="row">
+        <div class="col-md-8 col-sm-7 col-xs-10  col-sm-offset-1 col-xs-offset-1 nav-list">
+            <!-- 博客列表内容 -->
+            <div class="row">
+                <div class="col-md-11  blog-list" th:each="blog:${blog.records}">
+                    <!-- title -->
+                    <div class = "title" ><a href="" th:text="${blog.title}" th:href="@{'/blog/detail/'+${blog.id}}">珍惜时间</a></div>
+                    <br/>
+                    <div class="details">
+                        <span class="user">sly</span><span class="not">  in  </span><span th:text="${blog.typeName}" class="type">随笔</span>
+                        <span class="date" th:text="${#dates.format(blog.createTime, 'yyyy-MM-dd')}">2020-7-4</span>
+
+                    </div>
+
+                    <img class = "display" border="0" th:src="@{'../../picture/'+${blog.id}+'.jpg'}" alt="Pulpit rock" width="400" height="250">
+                </div>
+            </div>
+            <div th:replace="navright :: page"></div>
+        </div>
+
+        <div class="col-md-3 col-sm-3    nav-right " th:replace="navright :: navright">
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- 底部页脚 -->
+<nav class="navbar navbar-inverse navbar-static-bottom navbar-footer" th:replace="navright :: footer">
+
+
+</nav>
+</body>
+
+
+
+
+
+</html>

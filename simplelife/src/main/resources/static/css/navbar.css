@@ -1,0 +1,132 @@
+div.container {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    text-align: center !important;
+    color: white !important;
+}
+
+
+nav.navbar.navbar-default{
+    background: none !important;
+    border: none !important;
+    border-bottom: 1px solid #BEBEBE !important;
+    border-radius: 1px  !important;
+}
+html,body {
+
+    height: 100%;
+
+}
+div.one {
+    min-height: 100%;
+}
+nav.page {
+    position: relative !important;
+    bottom: 17% !important;
+    left: 22% !important;
+}
+div.own-nav {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-left: 315px !important;
+    margin-right: 400px !important;
+}
+
+
+
+div.sign-name {
+    position: absolute;
+    padding-top: 120px ;
+    padding-left: 80px;
+}
+body{
+    font-family: none !important;
+    letter-spacing: 1px !important;
+
+}
+.navbar-header a{
+    font-size: 50px !important;
+    padding-top: 50px !important;
+
+}
+
+ul.navbar-nav a{
+    font-size: medium !important;
+    margin-top: 100px !important;
+}
+.navbar-header a:hover{
+    color: grey!important;
+}
+
+
+ul a:hover{
+    font-weight: bold !important;
+    color: #363636!important;
+}
+
+ul li{
+    padding-left: 18px !important;
+    padding-top: 5px !important;
+    font-weight: normal;
+}
+
+@media (max-width: 1500px){
+    ul.navbar-nav a{
+        font-size: 17px !important;
+        margin-top: 1px !important;
+    }
+    div.own-nav {
+        margin-left: 100px !important;
+        margin-right: 100px !important;
+    }
+
+    div.sign-name {
+        display: none ;
+
+    }
+
+    ul a {
+        font-size: 17px !important;
+        margin-top: 0px !important;
+    }
+    .navbar-header a{
+        font-size: 30px !important;
+        padding-top: 20px !important;
+        border: none !important;
+    }
+}
+
+
+
+@media (max-width: 980px){
+    div.own-nav {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+
+    div.sign-name {
+        display: none ;
+
+    }
+    .navbar-header a{
+        font-size: 20px !important;
+        padding-top: 20px !important;
+        border: none !important;
+    }
+}
+
+@media (max-width: 350px){
+    ul.navbar-nav a{
+        font-size: 17px !important;
+        margin-top: 1px !important;
+    }
+    ul li{
+
+
+        font-weight: normal !important;
+        border-bottom: 1px solid #BEBEBE !important;
+    }
+
+}
